@@ -10,7 +10,7 @@
     <br />
     <a href="@Url.Action("AddHuge", "Dictionary")" class="w3-bar-item w3-button w3-hover-green">2. Add Huge List of Items  to Dictionary</a>
     <br />
-    <a href="#" class="w3-bar-item w3-button w3-hover-blue">3. Display Dictionary</a>
+    <a href="@Url.Action("DisplayDictionary", "Dictionary")" class="w3-bar-item w3-button w3-hover-blue">3. Display Dictionary</a>
     <br />
     <a href="@Url.Action("DeleteFrom", "Dictionary")" class="w3-bar-item w3-button w3-hover-teal">4. Delete from Dictionary</a>
     <br />
@@ -24,11 +24,4 @@
 <div align="center" position="top">
     <p>@ViewBag.Delete</p>
     <p>@ViewBag.SearchResults</p>
-</div>
-
-<div align="left">
-    @foreach (var sData in ViewBag.MyDictionary)
-    {
-        <p>@sData</p>
-    }
 </div>

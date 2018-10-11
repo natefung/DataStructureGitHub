@@ -38,11 +38,15 @@ namespace DataStructureGitHub.Controllers
             return View("Index");
         }
 
-        public ActionResult Displaystack()
+        public ActionResult DisplayStack()
         {
-            ViewBag.Mystack = myStack;
+            ViewBag.MyStack = myStack;
+            if (myStack.Count == 0)
+            {
+                ViewBag.NoStack = "There is nothing to display";
+            }
 
-            return View("Index");
+            return View("Display");
         }
 
         public ActionResult DeleteFrom()
@@ -64,9 +68,17 @@ namespace DataStructureGitHub.Controllers
         public ActionResult ClearStack()
         {
             ViewBag.MyStack = myStack;
-            myStack.Clear();
+            if (myStack.Count != 0)
+            {
+                myStack.Clear();
+            }
+            
+            else
+            {
+                ViewBag.NoStack = "The Stack is already empty";
+            }
 
-            return View("Index");
+            return View("Display");
         }
 
         public ActionResult SearchStack()

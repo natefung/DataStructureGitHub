@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Display";
 }
 
 <h2>Queue</h2>
@@ -21,8 +21,14 @@
     <a href="@Url.Action("Index", "Index")" class="w3-bar-item w3-button w3-hover-teal">7. Return to Main Menu</a>
 </div>
 
-<div align="center" position="top">
-    <p>@ViewBag.Delete</p>
-    <p>@ViewBag.SearchResults</p>
+<div>
+    <p>@ViewBag.NoQueue</p>
+</div>
+
+<div align="left">
+    @foreach (var sData in ViewBag.MyQueue)
+    {
+        <p>@sData</p>
+    }
 </div>
 

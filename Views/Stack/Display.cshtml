@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "Stack";
+    ViewBag.Title = "Display";
 }
 
 <h2>Stack</h2>
@@ -21,12 +21,14 @@
     <a href="@Url.Action("Index", "Index")" class="w3-bar-item w3-button w3-hover-teal">7. Return to Main Menu</a>
 </div>
 
-<div align="center" position="top">
-    <p>@ViewBag.Delete</p>
-    <p>@ViewBag.SearchResults</p>
+<div>
+    <p>@ViewBag.NoStack</p>
 </div>
 
-
-
-
+<div align="left">
+    @foreach (var sData in ViewBag.MyStack)
+    {
+        <p>@sData</p>
+    }
+</div>
 

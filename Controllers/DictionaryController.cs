@@ -42,8 +42,12 @@ namespace DataStructureGitHub.Controllers
         public ActionResult DisplayDictionary()
         {
             ViewBag.MyDictionary = myDictionary;
+            if (myDictionary.Count == 0)
+            {
+                ViewBag.NoDictionary = "There is nothing to display";
+            }
 
-            return View("Index");
+            return View("Display");
         }
 
         public ActionResult DeleteFrom()
@@ -65,9 +69,17 @@ namespace DataStructureGitHub.Controllers
         public ActionResult ClearDictionary()
         {
             ViewBag.MyDictionary = myDictionary;
-            myDictionary.Clear();
+            if (myDictionary.Count != 0)
+            {
+                myDictionary.Clear();
+            }
 
-            return View("Index");
+            else
+            {
+                ViewBag.NoDictionary = "The Dictionary is already empty";
+            }
+
+            return View("Display");
         }
 
         public ActionResult SearchDictionary()

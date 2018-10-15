@@ -2,30 +2,26 @@
 @{
     ViewBag.Title = "Stack";
 }
+<link rel="stylesheet" type="text/css" href="~/Content/Styles/Styles.css">
 
 <h2>Stack</h2>
 
-<div class="w3-bar w3-border w3-light-grey">
-    <a href="@Url.Action("AddOne", "Stack")" class="w3-bar-item w3-button">1. Add one time to stack</a>
-    <br />
-    <a href="@Url.Action("AddHuge", "Stack")" class="w3-bar-item w3-button w3-hover-green">2. Add Huge List of Items  to Stack</a>
-    <br />
-    <a href="@Url.Action("DisplayStack", "Stack")" class="w3-bar-item w3-button w3-hover-blue">3. Display Stack</a>
-    <br />
-    <a href="@Url.Action("DeleteFrom", "Stack")" class="w3-bar-item w3-button w3-hover-teal">4. Delete from Stack</a>
-    <br />
-    <a href="@Url.Action("ClearStack", "Stack")" class="w3-bar-item w3-button w3-hover-teal">5. Clear Stack</a>
-    <br />
-    <a href="@Url.Action("SearchStack", "Stack")" class="w3-bar-item w3-button w3-hover-teal">6. Search Stack</a>
-    <br />
-    <a href="@Url.Action("Index", "Index")" class="w3-bar-item w3-button w3-hover-teal">7. Return to Main Menu</a>
-</div>
+<ul class="w3-bar w3-border w3-light-grey">
+    <li><a href="@Url.Action("AddOne", "Stack")" >Add one time to stack</a></li>
+    <li><a href="@Url.Action("AddHuge", "Stack")">Add Huge List of Items to Stack</a></li>
+    <li><a href="@Url.Action("DisplayStack", "Stack")">Display Stack</a></li>
+    <li><a href="@Url.Action("DeleteFrom", "Stack")">Delete from Stack</a></li>
+    <li><a href="@Url.Action("ClearStack", "Stack")">Clear Stack</a></li>
+    <li><a href="@Url.Action("SearchStack", "Stack")">Search Stack</a></li>
+    <li><a href="@Url.Action("Index", "Index")">Return to Main Menu</a></li>
+</ul>
 
-<div align="center" position="top">
-    <p>@ViewBag.Delete</p>
-    <p>@ViewBag.SearchResults</p>
-</div>
-
+<body>
+    <div align="left" position="top">
+        <p>@ViewBag.Delete</p>
+        <p>@ViewBag.SearchResults</p>
+    </div>
+</body>
 
 
 

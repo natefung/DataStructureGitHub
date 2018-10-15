@@ -11,6 +11,8 @@ namespace DataStructureGitHub.Controllers
         // GET: Exit
         public ActionResult Index()
         {
+
+            //reroutes to byu.edu
             return Redirect("https://byu.edu");
         }
     }

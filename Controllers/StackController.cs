@@ -8,6 +8,7 @@ namespace DataStructureGitHub.Controllers
 {
     public class StackController : Controller
     {
+        //creates a stack and variables
         public static Stack<string> myStack = new Stack<string>();
         Boolean searchResults;
         // GET: Stack
@@ -18,6 +19,7 @@ namespace DataStructureGitHub.Controllers
             return View();
         }
 
+        //adds an entry into the stack
         public ActionResult AddOne()
         {
             myStack.Push("New Entry #" + (myStack.Count + 1));
@@ -26,6 +28,7 @@ namespace DataStructureGitHub.Controllers
             return View("Index");
         }
 
+        //adds a list of 2000 entries into the stack
         public ActionResult AddHuge()
         {
             myStack.Clear();
@@ -38,6 +41,7 @@ namespace DataStructureGitHub.Controllers
             return View("Index");
         }
 
+        //displays the stack
         public ActionResult DisplayStack()
         {
             ViewBag.MyStack = myStack;
@@ -49,6 +53,7 @@ namespace DataStructureGitHub.Controllers
             return View("Display");
         }
 
+        //deletes the last entry in the stack
         public ActionResult DeleteFrom()
         {
             ViewBag.Mystack = myStack;
@@ -65,6 +70,7 @@ namespace DataStructureGitHub.Controllers
             return View("Index");
         }
 
+        //clears the entire stack
         public ActionResult ClearStack()
         {
             ViewBag.MyStack = myStack;
@@ -81,6 +87,7 @@ namespace DataStructureGitHub.Controllers
             return View("Display");
         }
 
+        //searches for #350 in the stack and returns whether or not it was found and how quickly it was found
         public ActionResult SearchStack()
         {
             ViewBag.MyStack = myStack;

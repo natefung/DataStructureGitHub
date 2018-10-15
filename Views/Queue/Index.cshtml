@@ -3,26 +3,23 @@
     ViewBag.Title = "Index";
 }
 
+<link rel="stylesheet" type="text/css" href="~/Content/Styles/Styles.css">
+
 <h2>Queue</h2>
 
-<div class="w3-bar w3-border w3-light-grey">
-    <a href="@Url.Action("AddOne", "Queue")" class="w3-bar-item w3-button">1. Add one time to Queue</a>
-    <br />
-    <a href="@Url.Action("AddHuge", "Queue")" class="w3-bar-item w3-button w3-hover-green">2. Add Huge List of Items to Queue</a>
-    <br />
-    <a href="@Url.Action("DisplayQueue", "Queue")" class="w3-bar-item w3-button w3-hover-blue">3. Display Queue</a>
-    <br />
-    <a href="@Url.Action("DeleteFrom", "Queue")" class="w3-bar-item w3-button w3-hover-teal">4. Delete from Queue</a>
-    <br />
-    <a href="@Url.Action("ClearQueue", "Queue")" class="w3-bar-item w3-button w3-hover-teal">5. Clear Queue</a>
-    <br />
-    <a href="@Url.Action("SearchQueue", "Queue")" class="w3-bar-item w3-button w3-hover-teal">6. Search Queue</a>
-    <br />
-    <a href="@Url.Action("Index", "Index")" class="w3-bar-item w3-button w3-hover-teal">7. Return to Main Menu</a>
-</div>
+<ul class="w3-bar w3-border w3-light-grey">
+<li><a href="@Url.Action("AddOne", "Queue")">Add one time to Queue</a></li>
+<li><a href="@Url.Action("AddHuge", "Queue")">Add Huge List of Items to Queue</a></li>
+<li><a href="@Url.Action("DisplayQueue", "Queue")">Display Queue</a></li>
+<li><a href="@Url.Action("DeleteFrom", "Queue")">Delete from Queue</a></li>
+<li><a href="@Url.Action("ClearQueue", "Queue")">Clear Queue</a></li>
+<li><a href="@Url.Action("SearchQueue", "Queue")">Search Queue</a></li>
+<li><a href="@Url.Action("Index", "Index")">Return to Main Menu</a></li>
+</ul>
 
-<div align="center" position="top">
-    <p>@ViewBag.Delete</p>
-    <p>@ViewBag.SearchResults</p>
-</div>
-
+<body>
+    <div align="left" position="top">
+        <p>@ViewBag.Delete</p>
+        <p>@ViewBag.SearchResults</p>
+    </div>
+</body>

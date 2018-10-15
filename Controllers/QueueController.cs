@@ -8,6 +8,7 @@ namespace DataStructureGitHub.Controllers
 {
     public class QueueController : Controller
     {
+        //creates queue and search boolean
         static Queue<string> myQueue = new Queue<string>();
         Boolean searchResults;
         // GET: Queue
@@ -18,6 +19,7 @@ namespace DataStructureGitHub.Controllers
             return View();
         }
 
+        //adds a new entry into the queue
         public ActionResult AddOne()
         {
             myQueue.Enqueue("New Entry #" + (myQueue.Count + 1));
@@ -26,6 +28,7 @@ namespace DataStructureGitHub.Controllers
             return View("Index");
         }
 
+        //adds a list of 2000 entries into the queue
         public ActionResult AddHuge()
         {
             myQueue.Clear();
@@ -38,6 +41,7 @@ namespace DataStructureGitHub.Controllers
             return View("Index");
         }
 
+        //displays the queue
         public ActionResult DisplayQueue()
         {
             ViewBag.MyQueue = myQueue;
@@ -49,6 +53,7 @@ namespace DataStructureGitHub.Controllers
             return View("Display");
         }
 
+        //deletes the first entry from the queue
         public ActionResult DeleteFrom()
         {
             ViewBag.MyQueue = myQueue;
@@ -65,6 +70,7 @@ namespace DataStructureGitHub.Controllers
             return View("Index");
         }
 
+        //clears the entire queue
         public ActionResult ClearQueue()
         {
             ViewBag.MyQueue = myQueue;
@@ -81,6 +87,7 @@ namespace DataStructureGitHub.Controllers
             return View("Display");
         }
 
+        //searches for #350 in the queue and returns whether or not it was found and how fast it was found
         public ActionResult SearchQueue()
         {
             ViewBag.MyQueue = myQueue;

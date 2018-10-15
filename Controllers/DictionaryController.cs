@@ -13,45 +13,60 @@ namespace DataStructureGitHub.Controllers
         // GET: Dictionary
         public ActionResult Index()
         {
+            //store dictionary into viewbag
             ViewBag.MyDictionary = myDictionary;
 
+            //return the view
             return View();
         }
 
         public ActionResult AddOne()
         {
+            //add new entry to the dictionary
             myDictionary.Add("New Entry #" + (myDictionary.Count + 1), myDictionary.Count);
+
+            //store dicitionary into viewbag
             ViewBag.MyDictionary = myDictionary;
 
+            //return view
             return View("Index");
         }
 
         public ActionResult AddHuge()
         {
+            //clears the dictionary
             myDictionary.Clear();
 
+            //adds a 2000 entries into the dictionary
             for (int i = 0; i < 2000; i++)
             {
                 myDictionary.Add("New Entry #" + (myDictionary.Count + 1), myDictionary.Count);
                 ViewBag.MyDictionary = myDictionary;
             }
 
+            //return view
             return View("Index");
         }
 
         public ActionResult DisplayDictionary()
         {
+            //store dictionary into viewbag
             ViewBag.MyDictionary = myDictionary;
+
+            //display output if there's nothing in the dictionary
             if (myDictionary.Count == 0)
             {
                 ViewBag.NoDictionary = "There is nothing to display";
             }
 
+            //return the view
             return View("Display");
         }
 
+        //deletes an entry from the dictionary
         public ActionResult DeleteFrom()
         {
+
             ViewBag.MyDictionary = myDictionary;
             if (myDictionary.Count == 0)
             {
@@ -66,6 +81,7 @@ namespace DataStructureGitHub.Controllers
             return View("Index");
         }
 
+        //clears the entire dictionary
         public ActionResult ClearDictionary()
         {
             ViewBag.MyDictionary = myDictionary;
@@ -82,6 +98,7 @@ namespace DataStructureGitHub.Controllers
             return View("Display");
         }
 
+        //searches for the #350 entry and returns whether or not it was found and how fast it was found
         public ActionResult SearchDictionary()
         {
             ViewBag.MyDictionary = myDictionary;
